@@ -114,7 +114,7 @@ export default function TabLayout() {
                   {getGreeting()} 👋
                 </Text>
                 <Text className="text-[15px] font-bold text-zinc-900 leading-snug">
-                  kalejaiyeoluwadara
+                  singlepringle
                 </Text>
               </View>
             </View>
@@ -167,7 +167,7 @@ export default function TabLayout() {
 
       {/* Tab Navigator */}
       <Tabs
-        tabBar={(props) => <CustomTabBar {...props} />}
+        tabBar={(props: BottomTabBarProps) => <CustomTabBar {...props} /> as React.ReactNode}
         screenOptions={{ headerShown: false }}
       >
         <Tabs.Screen name="index" />
