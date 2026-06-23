@@ -66,8 +66,12 @@ export default function LeaderboardScreen() {
         {/* Hero header with dark gradient */}
         <LinearGradient
           colors={["#09090b", "#18181b", "#27272a"]}
-          style={{ paddingTop: insets.top + 20 }}
-          className="relative overflow-hidden px-5 pb-8"
+          style={{
+            paddingTop: insets.top + 20,
+            paddingHorizontal: 20,
+            paddingBottom: 32,
+            overflow: "hidden",
+          }}
         >
           {/* Decorative glows */}
           <View className="absolute -top-16 left-1/2 -ml-32 w-64 h-64 rounded-full bg-[#8B0000]/20" />
@@ -376,7 +380,7 @@ export default function LeaderboardScreen() {
             colors={["#18181b", "#27272a"]}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
-            className="p-4 items-center"
+            style={{ padding: 16, alignItems: "center" }}
           >
             <Text className="text-2xl">💀</Text>
             <Text className="text-sm font-bold text-white mt-1.5">

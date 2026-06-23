@@ -133,7 +133,15 @@ export default function ProfileScreen() {
           colors={["#450a0a", "#18181b", "#8B0000"]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
-          className="relative h-32 w-full overflow-hidden justify-end items-end px-4 pb-2"
+          style={{
+            height: 128,
+            width: "100%",
+            overflow: "hidden",
+            justifyContent: "flex-end",
+            alignItems: "flex-end",
+            paddingHorizontal: 16,
+            paddingBottom: 8,
+          }}
         >
           <Ionicons
             name="heart-dislike"

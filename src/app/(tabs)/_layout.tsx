@@ -5,6 +5,8 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { MotiView, AnimatePresence } from "moti";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+import Avatar from "../../components/Avatar";
+import { currentUser } from "../../lib/mock-data";
 
 function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   return (
@@ -104,9 +106,12 @@ export default function TabLayout() {
             {/* Left: Avatar + Greeting */}
             <View className="flex-row items-center gap-3">
               <View className="relative">
-                <View className="w-10 h-10 rounded-full bg-red-950 items-center justify-center">
-                  <Text className="text-white font-bold text-sm">JD</Text>
-                </View>
+                <Avatar
+                  initials={currentUser.initials}
+                  color={currentUser.avatarColor}
+                  imageUrl={currentUser.avatarUrl}
+                  size="md"
+                />
                 <View className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border border-white" />
               </View>
               <View className="flex-col">
@@ -114,7 +119,7 @@ export default function TabLayout() {
                   {getGreeting()} 👋
                 </Text>
                 <Text className="text-[15px] font-bold text-zinc-900 leading-snug">
-                  singlepringle
+                  {currentUser.username}
                 </Text>
               </View>
             </View>
