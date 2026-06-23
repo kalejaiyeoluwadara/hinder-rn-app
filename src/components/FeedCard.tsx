@@ -6,6 +6,7 @@ import { MotiView } from "moti";
 import Avatar from "./Avatar";
 import HateBadge from "./HateBadge";
 import { Post } from "../lib/types";
+import { resolveImage } from "../lib/mock-data";
 import { Ionicons } from "@expo/vector-icons";
 
 interface FeedCardProps {
@@ -30,9 +31,8 @@ export default function FeedCard({ post, index }: FeedCardProps) {
           {/* Couple Image Container */}
           <View className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-100 border border-zinc-100">
             <Image
-              source={{ uri: post.imageUrl }}
-              alt={post.title}
-              className="w-full h-full"
+              source={resolveImage(post.imageUrl)}
+              style={{ width: "100%", height: "100%" }}
               contentFit="cover"
               transition={300}
             />

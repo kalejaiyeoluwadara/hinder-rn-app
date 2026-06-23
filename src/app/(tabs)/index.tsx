@@ -10,7 +10,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { MotiView, AnimatePresence } from "moti";
-import { posts as initialPosts, currentUser } from "../../lib/mock-data";
+import { posts as initialPosts, currentUser, resolveImage } from "../../lib/mock-data";
 import { Post } from "../../lib/types";
 import FeedCard from "../../components/FeedCard";
 import FeedCardSkeleton from "../../components/FeedCardSkeleton";
@@ -182,8 +182,8 @@ export default function FeedScreen() {
                     {selectedEvidence ? (
                       <View className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-2">
                         <Image
-                          source={{ uri: selectedEvidence }}
-                          className="w-full h-full"
+                          source={resolveImage(selectedEvidence)}
+                          style={{ width: "100%", height: "100%" }}
                           contentFit="cover"
                         />
                         <Pressable
@@ -207,8 +207,8 @@ export default function FeedScreen() {
                             className="flex-1 aspect-square rounded-xl overflow-hidden border-2 border-transparent active:opacity-90 relative"
                           >
                             <Image
-                              source={{ uri: option.url }}
-                              className="w-full h-full"
+                              source={resolveImage(option.url)}
+                              style={{ width: "100%", height: "100%" }}
                               contentFit="cover"
                             />
                             <View className="absolute inset-0 bg-black/20 flex items-center justify-end p-1">

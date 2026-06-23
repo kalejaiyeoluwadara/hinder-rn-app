@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text } from "react-native";
 import { Image } from "expo-image";
 
+import { resolveImage } from "../lib/mock-data";
+
 interface AvatarProps {
   initials: string;
   color: string;
@@ -33,9 +35,8 @@ export default function Avatar({
     return (
       <View className={`${sizeMap[size]} rounded-full overflow-hidden shrink-0 bg-zinc-200`}>
         <Image
-          source={{ uri: imageUrl }}
-          alt={initials}
-          className="w-full h-full"
+          source={resolveImage(imageUrl)}
+          style={{ width: "100%", height: "100%" }}
           contentFit="cover"
           transition={200}
         />
